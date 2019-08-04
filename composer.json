@@ -7,6 +7,7 @@
 		"issues": "https://github.com/zikwall/easy-online-installer/issues",
 		"source": "https://github.com/zikwall/easy-online-installer"
 	},
+	"version": "1.0.0",
 	"authors": [
 		{
 			"name": "Andrey Kapitonov",
@@ -18,19 +19,11 @@
 			"zikwall\\EasyOnlineComposer\\": ""
 		}
 	},
-	"scripts": {
-		"post-package-install": [
-			"php -r \"print 'run method'\""
-		],
-		"post-install-cmd": [
-			"zikwall\\EasyOnlineComposer\\ScriptHandlerHelper::mkdirs"
-		],
-		"post-update-cmd": [
-			"zikwall\\EasyOnlineComposer\\ScriptHandlerHelper::mkdirs"
-		]
-	},
 	"extra": {
-		"class": "zikwall\\EasyOnlineComposer\\EasyOnlineInstallerPlugin"
+		"class": "zikwall\\EasyOnlineComposer\\EasyOnlineInstallerPlugin",
+		"easy-online-composer-mkdir": [
+			"vendor/zikwall/easy-online/modules"
+		]
 	},
 	"require": {
 		"composer-plugin-api": "^1.0",
