@@ -1,0 +1,36 @@
+{
+	"name": "zikwall/easy-online-installer",
+	"type": "composer-plugin",
+	"license": "MIT",
+	"keywords": ["yii2", "easy-online", "composer", "plugin"],
+	"support": {
+		"issues": "https://github.com/zikwall/easy-online-installer/issues",
+		"source": "https://github.com/zikwall/easy-online-installer"
+	},
+	"authors": [
+		{
+			"name": "Andrey Kapitonov",
+			"email": "andrey.kapitonov.96@gmall.com"
+		}
+	],
+	"autoload": {
+		"psr-4": {
+			"zikwall\\EasyOnlineInstaller\\": ""
+		}
+	},
+	"scripts": {
+		"post-package-install": [
+			"php -r \"print 'run method'\""
+		],
+		"post-install-cmd": [
+			"zikwall\\EasyOnlineInstaller\\ScriptHandlerHelper::mkdirs"
+		],
+		"post-update-cmd": [
+			"zikwall\\EasyOnlineInstaller\\ScriptHandlerHelper::mkdirs"
+		]
+	},
+	"require": {
+		"composer-plugin-api": "^1.0",
+		"composer/installers": "^1.0"
+	}
+}
