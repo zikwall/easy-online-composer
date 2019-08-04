@@ -1,12 +1,11 @@
 {
 	"name": "zikwall/easy-online-composer",
 	"type": "composer-plugin",
-	"version": "1.0.0",
 	"license": "MIT",
 	"keywords": ["yii2", "easy-online", "composer", "plugin"],
 	"support": {
-		"issues": "https://github.com/zikwall/easy-online-installer/issues",
-		"source": "https://github.com/zikwall/easy-online-installer"
+		"issues": "https://github.com/zikwall/encore-installer/issues",
+		"source": "https://github.com/zikwall/encore-installer"
 	},
 	"authors": [
 		{
@@ -14,18 +13,30 @@
 			"email": "andrey.kapitonov.96@gmall.com"
 		}
 	],
+	"autoload": {
+		"psr-4": {
+			"zikwall\\EasyOnlineComposer\\": "/src"
+		}
+	},
+	"scripts": {
+		"post-package-install": [
+			"php -r \"print 'run method'\""
+		],
+		"post-install-cmd": [
+			"zikwall\\EasyOnlineComposer\\ScriptHandlerHelper::mkdirs"
+		],
+		"post-update-cmd": [
+			"zikwall\\EasyOnlineComposer\\ScriptHandlerHelper::mkdirs"
+		]
+	},
+	"extra": {
+		"class": "zikwall\\EasyOnlineComposer\\EasyOnlineInstallerPlugin",
+		"encore-composer-mkdir": [
+			"vendor/zikwall/easy-online/modules"
+		]
+	},
 	"require": {
 		"composer-plugin-api": "^1.0",
 		"composer/installers": "^1.0"
-	},
-	"autoload": {
-		"psr-4": {
-			"zikwall\\EasyOnlineComposer\\": "src/"
-		}
-	},
-	"extra": {
-		"class": [
-			"zikwall\\EasyOnlineComposer\\EasyOnlineInstallerPlugin"
-		]
 	}
 }
