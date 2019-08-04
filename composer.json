@@ -1,5 +1,5 @@
 {
-	"name": "zikwall/easy-online-installer",
+	"name": "zikwall/easy-online-composer",
 	"type": "composer-plugin",
 	"license": "MIT",
 	"keywords": ["yii2", "easy-online", "composer", "plugin"],
@@ -15,7 +15,7 @@
 	],
 	"autoload": {
 		"psr-4": {
-			"zikwall\\EasyOnlineInstaller\\": ""
+			"zikwall\\EasyOnlineComposer\\": ""
 		}
 	},
 	"scripts": {
@@ -23,10 +23,10 @@
 			"php -r \"print 'run method'\""
 		],
 		"post-install-cmd": [
-			"zikwall\\EasyOnlineInstaller\\ScriptHandlerHelper::mkdirs"
+			"zikwall\\EasyOnlineComposer\\ScriptHandlerHelper::mkdirs"
 		],
 		"post-update-cmd": [
-			"zikwall\\EasyOnlineInstaller\\ScriptHandlerHelper::mkdirs"
+			"zikwall\\EasyOnlineComposer\\ScriptHandlerHelper::mkdirs"
 		]
 	},
 	"require": {

@@ -1,6 +1,6 @@
 <?php
 
-namespace zikwall\EncoreInstaller;
+namespace zikwall\EasyOnlineComposer;
 
 use Composer\Installer\LibraryInstaller;
 use Composer\Package\PackageInterface;
